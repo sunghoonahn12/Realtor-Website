@@ -1,18 +1,30 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar bg-dark">
-        <h1>
-          <a href="index.html"><i className="fas fa-code"></i> William Ahn's Website</a>
-        </h1>
-        <ul>
-          <li><a href="profiles.html">인사 및 소개</a></li>
-          <li><a href="register.html">칼럼</a></li>
-          <li><a href="login.html">로그인</a></li>
-        </ul>
-      </nav>
-    )
-}
+  return (
+    <nav className='navbar bg-dark'>
+      <h1>
+        <Link to='/'>
+          <i className='fas fa-code'></i> William Ahn's Website
+        </Link>
+      </h1>
+      <ul>
+        <li>
+          <Link to='/about'>인사 및 소개</Link>
+        </li>
+        <li>
+          <Link to='/column'>칼럼</Link>
+        </li>
+        <li>
+          <Link to='/register'>회원가입</Link>
+        </li>
+        <li>
+          <Link to='/login'>로그인</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
