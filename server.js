@@ -2,6 +2,7 @@ const express = require('express');
 const usersRouter = require('./routes/api/users');
 const postRouter = require('./routes/api/post');
 const authRouter = require('./routes/api/auth');
+const profileRouter = require('./routes/api/profile');
 const connectDB = require('./config/db');
 
 const app = express();
@@ -18,6 +19,7 @@ app.get('/', (req, res) => res.send('API Running'));
 app.use('/api/users', usersRouter);
 app.use('/api/post', postRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/profile', profileRouter);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
